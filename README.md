@@ -22,7 +22,7 @@ A sleek and responsive weather app built with Angular 18. Instantly check the cu
 
 Below is a screenshot of the Weather App interface:
 
-![Weather App Screenshot](../weather-app/public/Assets/Screenshot.png)
+![Weather App Screenshot](public/Assets/Screenshot.png)
 
 - **Location Display:** Shows your city or “Detecting location…” with an SVG icon.
 - **Search Bar:** Find weather for any city—just type and press Enter.
