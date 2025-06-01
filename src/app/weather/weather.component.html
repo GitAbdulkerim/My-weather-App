@@ -1,0 +1,46 @@
+<div class="weather-container">
+    <div class="top-bar">
+        <span class="location-label">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
+                    fill="#2196f3" />
+            </svg>
+            <span>{{ city || 'Detecting location...' }}</span>
+        </span>
+    </div>
+
+    <div class="search-bar">
+        <span class="search-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="#2196f3" stroke-width="2" />
+                <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#2196f3" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </span>
+        <input type="text" [(ngModel)]="searchCity" placeholder="Search for a city..." class="city-input search-input"
+            (keyup.enter)="onSearch()" />
+    </div>
+    <div class="unit-toggle">
+        <button [class.active]="unit === 'F'" (click)="setUnit('F')">°F</button>
+        <button [class.active]="unit === 'C'" (click)="setUnit('C')">°C</button>
+    </div>
+    <div class="weather-icon">
+        <!-- Your weather SVG icon here -->
+        <svg width="80" height="80" viewBox="0 0 64 64">
+            <circle cx="40" cy="28" r="16" fill="#fff" opacity="0.7" />
+            <circle cx="32" cy="36" r="14" fill="#fff" />
+            <path d="M24 44h24a12 12 0 0 0-24 0z" fill="#ccc" />
+            <g stroke="#fff" stroke-width="2">
+                <line x1="40" y1="8" x2="40" y2="16" />
+                <line x1="40" y1="40" x2="40" y2="48" />
+                <line x1="24" y1="28" x2="16" y2="28" />
+                <line x1="56" y1="28" x2="48" y2="28" />
+                <line x1="50" y1="18" x2="44" y2="24" />
+                <line x1="30" y1="18" x2="36" y2="24" />
+            </g>
+        </svg>
+    </div>
+    <div class="temperature">{{ displayTemperature }}&deg;{{ unit }}</div>
+    <div class="description">{{ description }}</div>
+    <div *ngIf="loading" class="spinner"></div>
+</div>

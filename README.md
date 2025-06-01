@@ -1,27 +1,103 @@
-# WeatherApp
+# Weather App (Angular 18)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+A sleek and responsive weather app built with Angular 18. Instantly check the current weather for any city or your current location, with a beautiful, modern UI.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Search by City:** Instantly get weather details by city name.
+- **Current Location:** Detects and displays weather for your actual location.
+- **Real-time Weather Data:** Shows temperature (°F/°C), weather description, humidity, and wind speed.
+- **Unit Toggle:** Easily switch between Fahrenheit and Celsius.
+- **Persistent Preferences:** Remembers your last city and unit selection with local storage.
+- **Error Handling:** Friendly messages for API errors or invalid cities.
+- **Mobile-Friendly Design:** Looks great on both desktop and mobile.
+- **Loading Spinner:** Clear feedback while fetching data.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## User Interface
+## User Interface
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Below is a screenshot of the Weather App interface:
 
-## Running unit tests
+![Weather App Screenshot](weather-app/public/Assets/screenshot.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Location Display:** Shows your city or “Detecting location…” with an SVG icon.
+- **Search Bar:** Find weather for any city—just type and press Enter.
+- **Unit Toggle:** Stylish buttons to switch temperature units.
+- **Weather Icon:** SVG-based for a modern, scalable look.
+- **Temperature & Description:** Prominent, easy-to-read values.
+- **Loading Spinner:** Animated indicator during API calls.
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## WeatherService (API Integration)
 
-## Further help
+- **getCoordinates(city):** Uses Open-Meteo’s Geocoding API to find a city’s coordinates.
+- **getWeather(lat, lon):** Fetches weather data for the specified location.
+- **reverseGeocode(lat, lon):** Converts coordinates back to a city name.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+_All API requests use Angular’s HttpClient. **No API key is needed** (Open-Meteo is free and public)._
+
+---
+
+## Styling & Design
+
+- Modern gradients and glassmorphism effects for a clean, elegant look.
+- Large, rounded buttons and inputs for usability.
+- Animated loading spinner for great user feedback.
+- Consistent color theme using CSS variables.
+- SVG icons for sharp, scalable graphics.
+
+---
+
+## How to Run
+
+1. **Clone the repo:**
+    ```bash
+    git clone https://github.com/GitAbdulkerim/My-weather-App.git
+    ```
+
+2. **Install dependencies:**
+    ```bash
+    cd My-weather-App
+    npm install
+    ```
+
+3. **Run the app:**
+    ```bash
+    ng serve
+    ```
+    Open [http://localhost:4200](http://localhost:4200) in your browser.
+
+---
+
+## AI Assistance
+
+- Used ChatGPT for code generation, API integration, debugging, and code reviews.
+- Ensured code quality and security by following AI-suggested best practices.
+- **No API keys or private data exposed—safe for public use.**
+
+---
+
+## Reflection
+
+- **What I Learned:** Integrating public APIs and using AI for coding help.
+- **Challenge:** Graceful error handling and user-friendly design.
+- **Proud of:** Clean UI and instant city search.
+- **What I’d Improve:** Add multi-city tracking, weather history, and automated tests.
+
+---
+
+## License
+
+This project is for educational purposes.  
+Weather data provided by [Open-Meteo](https://open-meteo.com/).
+
+---
+
+## Author
+
+**Abdulkerim Metenea**
